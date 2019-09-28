@@ -72,7 +72,6 @@ p.time {
   animation: reveal 2s ease 7.5s 1 forwards;
   opacity: 0;
   transition: all 0.3s ease;
-
 }
 
 @keyframes compress {
@@ -115,35 +114,38 @@ main {
   border-top-right-radius: 1rem;
   animation: drap-up 0.3s ease 9s forwards;
   display: flex;
+  will-change: height, box-shadow, transform;
   flex-direction: column;
-  transition: all 0.3s ease;
   height: 50px;
   color: #fff;
-  padding:0 1rem;
+  padding: 0 1rem;
 }
+
 p.time.more {
   transform: translateY(-25vh);
 }
+
 main.more {
+  transition: all 0.3s ease;
   height: 60vh;
   box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.2);
-
 }
 
-main .content{
+main .content {
   visibility: hidden;
   overflow: hidden;
   opacity: 0;
   flex: 1 1 auto;
   transition: all 0.3s ease 0.3s;
-
 }
-main.more .content{
+
+main.more .content {
   padding-top: 1rem;
   visibility: visible;
   overflow-y: auto;
   opacity: 1;
 }
+
 footer {
   color: rgba(255, 255, 255, 0.8);
   display: flex;

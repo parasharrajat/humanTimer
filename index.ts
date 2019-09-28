@@ -23,13 +23,18 @@ export class TimeCalculator {
   private _time: number;
   private _result: string;
   private _activeTimers = 0;
-
+  private _result$: Subject<string> = Subject && new Subject<string>();
   /**
    * Dynamic result observable
-   *
+   * @readonly
    * @memberof TimeCalculator
    */
-  result$ = new Subject<string>();
+  get result$() {
+    if (Subject) {
+      return this._result$ as Subject<string>;
+    }
+    throw new ReferenceError('Please install rxjs to use this');
+  }
 
   constructor(time: Date) {
     this._time = time.getTime();
@@ -78,7 +83,7 @@ export class TimeCalculator {
     // seconds
     if (secs < 60) {
       // console.log(secs + ' sec ago');
-      this._result = secs + ' sec ago';
+      this._result = secs + (secs > 1 ? ' secs' : ' sec') + ' ago';
     } else {
       secs /= 60;
       secs = Math.floor(secs);
@@ -130,7 +135,10 @@ export class TimeCalculator {
         }
       }
     }
-    this.result$.next(this._result);
+    try {
+      this.result$.next(this._result);
+    } catch (e) { }
+
   }
 
   /**

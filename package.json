@@ -1,0 +1,36 @@
+{
+  "name": "humantimer",
+  "version": "1.0.0",
+  "description": "Creates the real time clock, which shows the time in human readable form and updates it as the time passes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parasharrajat/humanTimer.git"
+  },
+  "keywords": [
+    "clock",
+    "timer",
+    "human-readable",
+    "real-world",
+    "time"
+  ],
+  "author": "Rajat Parashar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parasharrajat/humanTimer/issues"
+  },
+  "homepage": "https://github.com/parasharrajat/humanTimer#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "rxjs": "^6.5.3"
+  }
+}
